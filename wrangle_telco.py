@@ -1,6 +1,3 @@
-
-
-
 import numpy as np
 import pandas as pd
 from env import host, user, password
@@ -19,3 +16,14 @@ JOIN payment_types AS p
     return telco_data
 wrangle_telco()
 
+telco_df = wrangle_telco()
+
+def peekatdata(telco_df):
+    telco_df.head()
+    telco_df.tail()
+    telco_df.sample(10)
+    telco_df.shape
+    telco_df.describe()
+    telco_df.info()
+    return telco_df
+peekatdata(telco_df)
