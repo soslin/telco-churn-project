@@ -12,7 +12,8 @@ JOIN contract_types AS ct
 JOIN internet_service_types AS i
 	ON i.internet_service_type_id = c.internet_service_type_id
 JOIN payment_types AS p
-	ON c.payment_type_id = p.payment_type_id;''', url)
+	ON c.payment_type_id = p.payment_type_id
+WHERE tenure > 0 OR total_charges > 0;''', url)
     return telco_data
 wrangle_telco()
 
@@ -27,3 +28,7 @@ def peekatdata(telco_df):
     telco_df.info()
     return telco_df
 peekatdata(telco_df)
+
+
+def df_value_counts(telco_df):
+    df.groupby('a').count()
