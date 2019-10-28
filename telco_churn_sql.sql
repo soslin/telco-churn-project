@@ -1,6 +1,6 @@
 USE telco_churn;
 
-# Join all telco_churn tables
+#  Join all telco_churn tables
 SELECT * FROM customers AS c
 JOIN contract_types AS ct
 	ON c.contract_type_id = ct.contract_type_id
